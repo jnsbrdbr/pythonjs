@@ -6,7 +6,7 @@ class calculator:
         self.master=master
         master.title("calculator")
         self.equation=Entry(master, width=36, borderwidth=5)
-        self.equation.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+        self.equation.grid(row=0, column=0, columnspan=100, padx=10, pady=10)
 
         self.createbutton()
         
@@ -46,6 +46,7 @@ class calculator:
                 c+=1
             r+=1
 
+
     def addbutton(self,value):
 
             return Button(self.master, text=value, width=9, command = lambda: self.clickButton(str(value)))
@@ -64,7 +65,7 @@ class calculator:
             self.equation.insert(0, answer)  #answer it
 
         else:
-            self.equation.delete(-1, END) #do not let the revious number to act again
+            self.equation.delete(-1, END) #do not let the previous number to act again
             self.equation.insert(0, current_equation+value)
 
         
